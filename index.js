@@ -1,5 +1,23 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  var ccount = 0; 
+  if(word === "") {
+    return false;
+  }
+if ((word.length) % 2 === 0) {
+  ccount = (word.length) / 2;
+} else {
+  if (word.length === 1) {
+return true;
+  } else {
+    ccount = (word.length - 1) / 2;
+  }
+}
+for (var x = 0; x < ccount; x++) {
+  if (word[x] != word.slice(-1-x)[0]) {
+    return false;
+  }
+}
+return true;
 }
 
 /* 
